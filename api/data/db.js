@@ -37,3 +37,4 @@ process.once('SIGUSR2', function(){
 });
 
 require('./symbols.model.js');
+require('./stocks.model.js')

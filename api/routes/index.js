@@ -9,7 +9,7 @@ router
 .get(ctrlSymbol.getAll);
 
 router
-.route('/sndex/:stockId')
+.route('/symbol/:stockId')
 .get(ctrlStocks.getStock);
 
 module.exports = router;
