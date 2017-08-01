@@ -1,2 +1,6 @@
 var mongoose = require('mongoose');
-var stoc
+var Stocks = mongoose.model('Stocks')
+
+module.exports.getStock = function(req, res){
+
+};

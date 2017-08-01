@@ -1,5 +1,5 @@
 var mongoose = require('mongoose');
-var Index = mongoose.model('Index');
+var Symbol = mongoose.model('Symbol');
 
 module.exports.getAll = function(req, res){
     

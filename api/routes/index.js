@@ -1,11 +1,15 @@
 var express = require('express');
 var router = express.Router();
 
+var ctrlSymbol = require('../controllers/symbol.controllers');
+var ctrlStocks = require('../controllers/stock.controllers');
 
 router
-.route('/index')
-.get(ctrlIndex.getAll);
+.route('/symbol')
+.get(ctrlSymbol.getAll);
 
 router
-.route('/index/:stockId')
+.route('/sndex/:stockId')
 .get(ctrlStocks.getStock);
+
+module.exports = router;
