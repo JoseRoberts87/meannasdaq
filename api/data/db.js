@@ -36,4 +36,4 @@ process.once('SIGUSR2', function(){
     });
 });
 
-require('./symbols.models.js');
+require('./symbols.model.js');
