@@ -4,7 +4,7 @@ var router = express.Router();
 
 router
 .route('/index')
-.get(ctrlIndex.getAll)
+.get(ctrlIndex.getAll);
 
 router
 .route('/index/:stockId')

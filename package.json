@@ -1,0 +1,28 @@
+{
+  "name": "mean-nasdaq",
+  "version": "1.0.0",
+  "description": "MEAN stack App",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JoseRoberts87/meannasdaq.git"
+  },
+  "keywords": [
+    "mean"
+  ],
+  "author": "jose roberts",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JoseRoberts87/meannasdaq/issues"
+  },
+  "homepage": "https://github.com/JoseRoberts87/meannasdaq#readme",
+  "dependencies": {
+    "angularjs": "0.0.1",
+    "csvtojson": "^1.1.7",
+    "express": "^4.15.3",
+    "mongoose": "^4.11.5"
+  }
+}
