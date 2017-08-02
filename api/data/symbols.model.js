@@ -17,4 +17,4 @@ var symbolsSchema = new mongoose.Schema({
     NextShares:String
 });
 
-mongoose.model('Symbol', symbolsSchema);
+mongoose.model('Symbol', symbolsSchema, 'symbols');

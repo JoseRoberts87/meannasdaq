@@ -3,13 +3,14 @@ var router = express.Router();
 
 var ctrlSymbol = require('../controllers/symbol.controllers');
 var ctrlStocks = require('../controllers/stock.controllers');
-
+console.log('routing1')
 router
-.route('/symbol')
+.route('/symbols')
 .get(ctrlSymbol.getAll);
+console.log('routing')
 
 router
-.route('/symbol/:stockId')
+.route('/symbols/:stockId')
 .get(ctrlStocks.getStock);
 
 module.exports = router;

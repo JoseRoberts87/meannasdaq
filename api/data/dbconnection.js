@@ -9,7 +9,7 @@ var open = function(){
             return;
         }
         _connection = db;
-        console.log('DB.Connected, db');
+        console.log('DB Connected', db);
     });
 };
 

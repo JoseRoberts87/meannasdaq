@@ -4,4 +4,4 @@ var stockSchema = mongoose.Schema({
     Stock:{}
 });
 
-mongoose.model('Stock', stockSchema);
+mongoose.model('Stock', stockSchema, 'stocks');
