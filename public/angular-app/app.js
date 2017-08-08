@@ -1,8 +1,8 @@
-angular.module('meannasdaq', ['ngRoute', 'angular-jwt']).config(config).run(run);
+angular.module('meannasdaq', ['ngRoute', 'angular-jwt']).config(config)
 
 function config($httpProvider, $routeProvider,$locationProvider) {
     $locationProvider.hashPrefix('');
-    $httpProvider.interceptors.push(AuthInterceptor)
+    $httpProvider
     $routeProvider
     .when('/', {
         templateUrl: 'angular-app/main/main.html',
@@ -12,7 +12,7 @@ function config($httpProvider, $routeProvider,$locationProvider) {
     })
     .when('/symbols', {
         templateUrl: 'angular-app/symbols-list/symbols.html',
-        controller: sym,
+        controller: SymbolsController,
         controllerAs: 'vm',
         access:{
             restricted: false
@@ -20,7 +20,7 @@ function config($httpProvider, $routeProvider,$locationProvider) {
     })
     .when('/symbol/:id', {
         templateUrl: 'angular-app/stocks-display/stocks.html',
-        controller: HotelController,
+        controller: StocksController,
         controllerAs: 'vm',
         access:{
             restricted: false
@@ -31,11 +31,3 @@ function config($httpProvider, $routeProvider,$locationProvider) {
     });
 }
 
-function run($rootScope, $location, $window, AuthFactory){
-    $rootScope.$on('$rootChangeStart', function(event, nextRoute, currentRoute){
-        if (nextRoute.access !== undefined && nextRoute.access.restricted && !$window.sessionStorage.token && !AuthFactory.isLoggedIn){
-            event.preventDefault();
-            $location.path('/');
-        }
-    })
-}
