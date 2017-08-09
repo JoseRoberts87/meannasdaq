@@ -6,6 +6,6 @@ function SymbolsController($http, $route, $routeParams, nasdaqDataFactory){
     //     $http.get('/api/hotels?count=10').then(function(response){
     nasdaqDataFactory.nasdaqList().then(function(response){
         console.log(response);
-        vm.hotels = response;
+        vm.symbols = response;
     });
 }

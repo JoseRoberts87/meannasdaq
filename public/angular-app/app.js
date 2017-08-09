@@ -11,7 +11,7 @@ function config($httpProvider, $routeProvider,$locationProvider) {
         }
     })
     .when('/symbols', {
-        templateUrl: 'angular-app/symbols-list/symbols.html',
+        templateUrl: 'angular-app/symbols-display/symbols.html',
         controller: SymbolsController,
         controllerAs: 'vm',
         access:{
