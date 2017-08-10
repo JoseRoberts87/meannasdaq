@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/JoseRoberts87/meannasdaq#readme",
   "dependencies": {
+    "ajax-request": "^1.2.3",
     "angular-jwt": "^0.1.9",
     "angular-route": "^1.6.5",
     "angularjs": "0.0.1",
