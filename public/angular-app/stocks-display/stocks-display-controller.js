@@ -22,8 +22,7 @@ function StocksController($route, $http, $routeParams, nasdaqDataFactory){
 //     return temp.responseJSON;
 // }();    
     nasdaqDataFactory.stocksDisplay(id).then(function(response){
-        console.log(response);
-        vm.datas = response['Meta Data'];
+        vm.data = response['Meta Data'];
         vm.series = response['Time Series (Daily)'];
     });
 }
