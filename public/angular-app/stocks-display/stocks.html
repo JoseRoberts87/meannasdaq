@@ -5,13 +5,15 @@
 
     <table class="table-striped" id="table-dates">
         <tr>
+            <th style="padding: 5px;">Date</th>
             <th style="padding: 5px;">Open</th>
             <th style="padding: 5px;">High</th>
             <th style="padding: 5px;">Low</th>
             <th style="padding: 5px;">Close</th>
             <th style="padding: 5px;">Volume</th>
         </tr>
-        <tr ng-repeat="date in vm.series">
+        <tr ng-repeat="(key, date) in vm.series">
+            <td style="padding: 5px;">{{key}}</td>
             <td style="padding: 5px;">{{date['1. open']}}</td>
             <td style="padding: 5px;">{{date['2. high']}}</td>
             <td style="padding: 5px;">{{date['3. low']}}</td>
