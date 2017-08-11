@@ -4,7 +4,14 @@ function StocksController($route, $http, $routeParams, nasdaqDataFactory){
     var vm = this;
     var id = $routeParams.id;
     console.log('getting stock by symbol', id)
-    vm.title = 'MEAN Nasdaq Stock View';
+   
+    nasdaqDataFactory.stocksDisplay(id).then(function(response){
+        console.log(response['Time Series (Daily)']);
+        vm.data = response['Meta Data'];
+        vm.series = response['Time Series (Daily)'];
+    });
+}
+    // vm.title = 'MEAN Nasdaq Stock View';
 
 //     var url = 'https://www.alphavantage.co/query?';
 //     var data = {function: 'TIME_SERIES_DAILY', symbol: id, apikey: '8GZR3OKD6QR2ATR1'};
@@ -20,10 +27,4 @@ function StocksController($route, $http, $routeParams, nasdaqDataFactory){
 //         }
 //     });
 //     return temp.responseJSON;
-// }();    
-    nasdaqDataFactory.stocksDisplay(id).then(function(response){
-        console.log(response['Time Series (Daily)']);
-        vm.data = response['Meta Data'];
-        vm.series = response['Time Series (Daily)'];
-    });
-}
+// }(); 
