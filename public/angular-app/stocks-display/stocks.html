@@ -1,6 +1,8 @@
 <h3>Showing data for stock {{vm.data['2. Symbol']}}</h3>
-<p>Stock was last refreshed on {{vm.data['3. Last Refreshed']}}</p>
-
+<div class="symbols-text">
+    <p>Stock was last refreshed on {{vm.data['3. Last Refreshed']}}</p> 
+    <button class="btn btn-primary" type="submit" id="gen-graph">Generate</button>
+</div>
     <table class="table-striped" id="table-dates">
         <tr>
             <th>Date</th>

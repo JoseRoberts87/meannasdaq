@@ -27,3 +27,15 @@ td{
     padding: 10px;
     font-size: 15px;
 }
+.symbols-text{
+    /*float: right;*/
+    margin: 10px;
+    
+}
+#gen-graph {
+     margin-top: 50px;
+     margin-right: 10px;
+     position:absolute;
+     top:0;
+     right:0;
+ }
