@@ -1,13 +1,30 @@
 <h1>{{vm.title}}</h1>
-<!--<p>{{vm.series}}</p>
+
+
+
 <ul>
-    <li ng-repeat="serie in vm.series" >{{serie['2017-07-03']}}</li>
+    <li ng-repeat="data in vm.datas" >{{data}}</li>
 
 </ul>
 
-<ul>
-    <li ng-repeat="date in vm.data" >{{date['1. Information']}}</li>
 
-</ul>
+    <table class="table-striped" id="table-dates">
+        <tr>
+            <th style="padding: 5px;">Open</th>
+            <th style="padding: 5px;">High</th>
+            <th style="padding: 5px;">Low</th>
+            <th style="padding: 5px;">Close</th>
+            <th style="padding: 5px;">Volume</th>
+        </tr>
+        <tr ng-repeat="date in vm.series">
+            <td style="padding: 5px;">{{date['1. open']}}</td>
+            <td style="padding: 5px;">{{date['2. high']}}</td>
+            <td style="padding: 5px;">{{date['3. low']}}</td>
+            <td style="padding: 5px;">{{date['4. close']}}</td>
+            <td style="padding: 5px;">{{date['5. volume']}}</td>
+        </tr> 
+    </table>
+    
 
-<p>{{vm.data['1. Information']}}</p>-->
+
+

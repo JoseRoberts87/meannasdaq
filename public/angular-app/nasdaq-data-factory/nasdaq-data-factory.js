@@ -11,7 +11,11 @@ function nasdaqDataFactory($http){
     }
 
     function stocksDisplay(id){
-        return $http.get('/api/symbols/' + id).then(complete).catch(failed);
+        var apikey ='apikey=8GZR3OKD6QR2ATR1';
+        var func = 'function=TIME_SERIES_DAILY&';
+        var symbol = 'symbol='+id+'&'
+        var url = 'https://www.alphavantage.co/query?';
+        return $http.get(url+func+symbol+apikey).then(complete).catch(failed);
     }
 
     function complete(response){
