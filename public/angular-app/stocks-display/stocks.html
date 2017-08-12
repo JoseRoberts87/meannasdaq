@@ -21,14 +21,11 @@
         <td>{{date['5. volume']}}</td>
     </tr>
 </table>
-<div class="graph-holder">
-    <svg width="960" height="500"></svg>
-</div>
+
+<svg class="graph-holder" width="960" height="500"></svg>
 
 <script>
     function runGraph() {
-        console.log('button pressed')
-
         var n = 4,
             m = 10;
 
@@ -99,6 +96,18 @@
             .attr("height", function(d) {
                 return y(d[0]) - y(d[1]);
             });
+
+        var axis = d3.scaleBand()
+            .domain(['8/10', '8/9', '8/8', '8/7', '8/6', '8/5', '8/4', '8/3', '8/2', '8/1'])
+            .rangeRound([0, width])
+            .padding(0.08);
+
+        g.append("g")
+            .attr("class", "axis axis--x")
+            .attr("transform", "translate(0," + height + ")")
+            .call(d3.axisBottom(axis)
+                .tickSize(0)
+                .tickPadding(6));
 
         function bumps(m) {
             var values = [],
