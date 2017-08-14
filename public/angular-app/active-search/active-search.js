@@ -11,7 +11,7 @@ var searchReady = getXmlHttpRequestObject();
 function activeSearch() {
     if (searchReady.readyState == 4 || searchReady.readyState == 0) {
         var strSearch = escape(document.getElementById('txtSearch').value);
-        searchReady.open("GET", 'activeSearch.php?search=' + strSearch, true);
+        searchReady.open("GET", '/api/symbols/' + strSearch, true);
         searchReady.onreadystatechange = handleActiveSearch;
         searchReady.send(null);
     }
@@ -26,7 +26,7 @@ function handleActiveSearch() {
             var suggest = '<div onmouseover="javascript:suggestOver(this);" ';
             suggest += 'onmouseout="javascript:suggestOut(this);" ';
             suggest += 'onclick="javascript:setSearch(this.innerHTML);" ';
-            suggest += 'claasearch="suggest_link">' + strSearch[i] + '</div>';
+            suggest += 'class="suggest_link">' + strSearch[i] + '</div>';
             asearch.innerHTML += suggest;
         }
     }
