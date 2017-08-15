@@ -1,46 +1,27 @@
-function getXmlHttpRequestObject() {
-    if (window.XMLHttpRequest) {
-        return new XMLHttpRequest();
-    } else {
-        alert("this is currently setup to work on Chrome");
-    }
-}
+//  $(document).ready(function() {
+//      var tickSymbols = [
+//          'Alabama',
+//          'Alaska',
+//          'Arizona',
+//          'Arkansas',
+//          'California',
+//          'Colorado'
+//      ];
 
-var searchReady = getXmlHttpRequestObject();
+//      var tickSymbols = new Bloodhound({
+//          datumTokenizer: Bloodhound.tokenizers.whitespace,
+//          queryTokenizer: Bloodhound.tokenizers.whitespace,
+//          local: tickSymbols
+//      });
 
-function activeSearch() {
-    if (searchReady.readyState == 4 || searchReady.readyState == 0) {
-        var strSearch = escape(document.getElementById('txtSearch').value);
-        searchReady.open("GET", '/api/symbols/' + strSearch, true);
-        searchReady.onreadystatechange = handleActiveSearch;
-        searchReady.send(null);
-    }
-}
+//      console.log(tickSymbols)
 
-function handleActiveSearch() {
-    if (searchReady.readyState == 4) {
-        var asearch = document.getElementById('active_search')
-        asearch.innerHTML = '';
-        var strSearch = searchReady.responseText.split("\n");
-        for (i = 0; i < strSearch.length - 1; i++) {
-            var suggest = '<div onmouseover="javascript:suggestOver(this);" ';
-            suggest += 'onmouseout="javascript:suggestOut(this);" ';
-            suggest += 'onclick="javascript:setSearch(this.innerHTML);" ';
-            suggest += 'class="suggest_link">' + strSearch[i] + '</div>';
-            asearch.innerHTML += suggest;
-        }
-    }
-}
-
-function suggestOver(div_value) {
-    div_value.claasearchName = 'suggest_link_over';
-}
-
-function suggestOut(div_value) {
-    div_value.claasearchName = 'suggest_link';
-}
-
-function setSearch(value) {
-    document.getElementById('txtSearch').value = value;
-    document.getElementById('search_suggest').innerHTML = '';
-}
+//      $('.typeahead').typeahead({
+//          hint: true,
+//          highlight: true,
+//          minLength: 1
+//      }, {
+//          name: 'symbols',
+//          source: tickSymbols
+//      });
+//  });

@@ -2,12 +2,13 @@
 
 <div style="width: 500px;">
     <form id="form-search" action="">
-        <input type="text" id="txtSearch" name="txtSearch" alt="Search Criteria" onkeyup="activeSearch();" autocomplete="off" />
-        <input type="submit" id="cmdSearch" name="cmdSearch" value="Search" alt="Run Search" /><br />
-        <div id="search_suggest">
+        <div class="bs-example">
+            <input type="text" class="typeahead tt-query" autocomplete="off" spellcheck="false">
+            <input type="submit" class="btn btn-primary" id="cmdSearch" /><br />
         </div>
     </form>
 </div>
+
 
 <!--<ul>
     <li ng-repeat="symbol in vm.symbols"><a ng-href="#/symbol/{{symbol.Symbol}}">{{symbol.Symbol}}</li>
