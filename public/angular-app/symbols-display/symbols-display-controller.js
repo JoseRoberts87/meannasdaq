@@ -4,6 +4,7 @@ function SymbolsController($http, $route, $routeParams, nasdaqDataFactory) {
     var vm = this;
     vm.title = 'MEAN Nasdaq App';
     vm.symbols;
+    vm.symbol;
     nasdaqDataFactory.nasdaqList().then(function(response) {
         var res = [];
         for (var i = 0; i < response.length; i++) {
@@ -30,5 +31,11 @@ function SymbolsController($http, $route, $routeParams, nasdaqDataFactory) {
             source: tickSymbols
         });
     }
+    $('#tickerSymbolForm').submit(function() {
+        event.preventDefault()
 
+        vm.symbol = $('#myInput').val()
+        console.log(vm.symbol)
+
+    })
 }

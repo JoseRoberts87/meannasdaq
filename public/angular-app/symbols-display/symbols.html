@@ -1,9 +1,8 @@
 <h4>{{ vm.title}}</h4>
-
 <div style="width: 500px;">
-    <form id="form-search" action="">
+    <form id="tickerSymbolForm" method="POST" action="/symbols/APPL">
         <div class="bs-example">
-            <input type="text" class="typeahead tt-query" autocomplete="off" spellcheck="false">
+            <input type="text" class="typeahead tt-query" id="myInput" autocomplete="off" spellcheck="false" required>
             <input type="submit" class="btn btn-primary" id="cmdSearch" /><br />
         </div>
     </form>

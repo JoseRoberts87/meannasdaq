@@ -2,7 +2,6 @@ angular.module('meannasdaq', ['ngRoute', 'angular-jwt']).config(config)
 
 function config($httpProvider, $routeProvider, $locationProvider) {
     $locationProvider.hashPrefix('');
-    $httpProvider
     $routeProvider
     // .when('/', {
     //     templateUrl: 'angular-app/main/main.html',
@@ -26,7 +25,7 @@ function config($httpProvider, $routeProvider, $locationProvider) {
                 restricted: false
             }
         })
-        .otherwise({
-            redirectTo: '/'
-        });
+        // .otherwise({
+        //     redirectTo: '/'
+        // });
 }
