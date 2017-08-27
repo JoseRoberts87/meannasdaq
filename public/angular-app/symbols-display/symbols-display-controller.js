@@ -1,6 +1,6 @@
 angular.module('meannasdaq').controller('SymbolsController', SymbolsController);
 
-function SymbolsController($http, $route, $routeParams, nasdaqDataFactory) {
+function SymbolsController($http, $scope, $route, $routeParams, nasdaqDataFactory) {
     var vm = this;
     vm.title = 'MEAN Nasdaq App';
     vm.symbols;
@@ -31,11 +31,11 @@ function SymbolsController($http, $route, $routeParams, nasdaqDataFactory) {
             source: tickSymbols
         });
     }
-    $('#tickerSymbolForm').submit(function() {
+    $scope.getStock = function() {
         event.preventDefault()
 
-        vm.symbol = $('#myInput').val()
-        console.log(vm.symbol)
+        vm.symbol = $('#myInput').val();
+        console.log('works', vm.symbol)
 
-    })
+    }
 }
