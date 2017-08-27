@@ -36,6 +36,8 @@ function SymbolsController($http, $scope, $route, $routeParams, nasdaqDataFactor
 
         vm.symbol = $('#myInput').val();
         console.log('works', vm.symbol)
+        url = '/#/symbol/' + vm.symbol
+        window.location = url
 
     }
 }
