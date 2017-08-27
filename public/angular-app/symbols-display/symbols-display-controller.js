@@ -8,10 +8,10 @@ function SymbolsController($http, $scope, $route, $routeParams, nasdaqDataFactor
     nasdaqDataFactory.nasdaqList().then(function(response) {
         var res = [];
         for (var i = 0; i < response.length; i++) {
-            res.push(response[i]['Symbol'])
+            res.push(response[i]['Symbol']);
         }
         vm.symbols = res;
-        sendToPage(vm.symbols)
+        sendToPage(vm.symbols);
     });
 
     function sendToPage(tickSymbol) {
@@ -33,11 +33,8 @@ function SymbolsController($http, $scope, $route, $routeParams, nasdaqDataFactor
     }
     $scope.getStock = function() {
         event.preventDefault()
-
         vm.symbol = $('#myInput').val();
-        console.log('works', vm.symbol)
-        url = '/#/symbol/' + vm.symbol
-        window.location = url
-
-    }
+        url = '/#/symbol/' + vm.symbol;
+        window.location = url;
+    };
 }

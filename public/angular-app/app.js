@@ -3,12 +3,6 @@ angular.module('meannasdaq', ['ngRoute', 'angular-jwt']).config(config)
 function config($httpProvider, $routeProvider, $locationProvider) {
     $locationProvider.hashPrefix('');
     $routeProvider
-    // .when('/', {
-    //     templateUrl: 'angular-app/main/main.html',
-    //     access:{
-    //         restricted: false
-    //     }
-    // })
         .when('/', {
             templateUrl: 'angular-app/symbols-display/symbols.html',
             controller: SymbolsController,
@@ -24,8 +18,5 @@ function config($httpProvider, $routeProvider, $locationProvider) {
             access: {
                 restricted: false
             }
-        })
-        // .otherwise({
-        //     redirectTo: '/'
-        // });
+        });
 }
